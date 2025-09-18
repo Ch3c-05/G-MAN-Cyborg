@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -7,6 +7,8 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 8f;
     private float jumpingPower = 20f;
     private bool isFacingRight = true;
+
+    public bool IsFacingRight => isFacingRight; // <-- Add this line
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
