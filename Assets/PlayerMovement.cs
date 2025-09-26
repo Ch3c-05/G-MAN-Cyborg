@@ -55,7 +55,7 @@ public class PlayerMovement : MonoBehaviour
         {
             isFacingRight = !isFacingRight;
 
-            transform.Rotate(0f, 180f, 0f);
+            transform.Rotate(0f, 180f, 0f); 
         }
     }
 }

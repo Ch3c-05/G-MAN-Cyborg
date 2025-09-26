@@ -13,4 +13,10 @@ public class Projectile : MonoBehaviour
         float xVelocity = moveRight ? speed : -speed;
         GetComponent<Rigidbody2D>().linearVelocity = new Vector2(xVelocity, 0f);
     }
+
+    void OnTriggerEnter2D()
+    {
+        Debug.Log("Enemy hit object");
+        Destroy(gameObject);
+    }
 }

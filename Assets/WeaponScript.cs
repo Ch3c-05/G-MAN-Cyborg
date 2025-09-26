@@ -6,7 +6,6 @@ public class WeaponScript : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
-
     private PlayerMovement playerMovement;
 
     void Start()

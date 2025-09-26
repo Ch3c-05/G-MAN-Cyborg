@@ -7,6 +7,8 @@ public class EnemyScript : MonoBehaviour
     public GameObject projectilePrefab; // Bullet prefab
     public Transform firePoint;         // Bullet spawn point
     public float fireRate = 1f;         // Shots per second
+    public int health = 100;          // Enemy health
+    public GameObject deathEffect;     
 
     private float nextFireTime = 0f;
     private bool facingRight = true;    // Current facing direction
@@ -23,11 +25,11 @@ public class EnemyScript : MonoBehaviour
                 Flip();
             }
 
-            // Check if player is in front (same direction as facing)
             bool playerInFront = (facingRight && directionToPlayer.x < 0) || (!facingRight && directionToPlayer.x > 0);
-
-            // Check horizontal distance
             float distanceX = Mathf.Abs(directionToPlayer.x);
+
+            // Debug output
+            Debug.Log($"FacingRight: {facingRight}, directionToPlayer.x: {directionToPlayer.x}, playerInFront: {playerInFront}, distanceX: {distanceX}");
 
             if (playerInFront && distanceX <= detectionRange && Time.time >= nextFireTime)
             {
@@ -40,12 +42,36 @@ public class EnemyScript : MonoBehaviour
     void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        Vector3 scale = transform.localScale;
+        scale.x *= -1;
+        transform.localScale = scale;
     }
 
     void Shoot()
     {
         GameObject bullet = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
-        bullet.GetComponent<Projectile>().moveRight = facingRight;
+        bullet.GetComponent<Projectile>().moveRight = !facingRight;
     }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
+
+    void Die()
+    {
+        if (deathEffect != null)
+        {
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
+        }
+
+        Destroy(gameObject);
+    }
+
+
+
 }

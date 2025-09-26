@@ -3,6 +3,7 @@ using UnityEngine;
 public class bullet : MonoBehaviour
 {
     public float speed = 20f;
+    public int damage = 50;
     public Rigidbody2D rb;
 
     private Vector2 direction = Vector2.right;
@@ -16,5 +17,17 @@ public class bullet : MonoBehaviour
     void Start()
     {
         rb.linearVelocity = direction * speed;
+        Destroy(gameObject, 3f);
     }
+
+    void OnTriggerEnter2D(Collider2D hitinfo)
+    {
+        EnemyScript enemy = hitinfo.GetComponent<EnemyScript>();
+        if(enemy != null)
+        {
+            enemy.TakeDamage(damage);
+        }
+        Destroy(gameObject);
+    }
+
 }
