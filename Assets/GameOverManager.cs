@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverUI; // assign your GameOverScreen panel here
+    public GameObject winScreen;
 
     // Show Game Over screen
     public void GameOver()
@@ -17,6 +18,12 @@ public class GameOverManager : MonoBehaviour
     {
         Time.timeScale = 1f; // unpause
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void WinGame()
+    {
+        winScreen.SetActive(true);
+        Time.timeScale = 0f; // pause the game
     }
 
     // Quit game (works in build, not editor)
