@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5008086420475363247}
   - component: {fileID: 4229596397288802564}
   - component: {fileID: 4394472760101264813}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29,8 +29,8 @@ Transform:
   m_GameObject: {fileID: 6002495652977908419}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.73, y: -2.74, z: 0}
-  m_LocalScale: {x: 0.3885598, y: 0.3885598, z: 1}
+  m_LocalPosition: {x: -2.5924, y: -2.7985, z: 0}
+  m_LocalScale: {x: 0.3165208, y: 0.24576406, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6730012742370414695, guid: e81d73ccdd1abc043a19e4ea1a6718ea, type: 3}
+  m_Sprite: {fileID: -3770763083538941003, guid: ab60bbee87355394cbe7c1368478953d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -158,7 +158,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.72, y: 0.32}
+    oldSize: {x: 3.82, y: 0.82}
     newSize: {x: 1.72, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

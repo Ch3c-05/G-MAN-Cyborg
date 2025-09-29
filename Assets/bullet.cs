@@ -22,12 +22,25 @@ public class bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D hitinfo)
     {
+        if(hitinfo.gameObject.layer == LayerMask.NameToLayer("EnemyBullet"))
+        {
+            return; // Ignore collisions with the player
+        }
+
+
         EnemyScript enemy = hitinfo.GetComponent<EnemyScript>();
         if(enemy != null)
         {
             enemy.TakeDamage(damage);
+            Destroy(gameObject);
         }
-        Destroy(gameObject);
+
+
+        if (hitinfo.gameObject.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
+
     }
 
 }
