@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 5008086420475363247}
   - component: {fileID: 4229596397288802564}
   - component: {fileID: 4394472760101264813}
-  m_Layer: 10
+  m_Layer: 8
   m_Name: BulletEnemy
-  m_TagString: Untagged
+  m_TagString: EnemyBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,3 +180,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   speed: 5
   moveRight: 0
+  damage: 20

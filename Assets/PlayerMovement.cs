@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour
     private bool isFacingRight = true;
 
     public bool IsFacingRight => isFacingRight;
+ 
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
@@ -18,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
 
     private PlatformEffector2D currentEffector;
     private float dropTimer;
+
 
     void Update()
     {
